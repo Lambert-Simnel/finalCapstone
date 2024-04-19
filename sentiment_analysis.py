@@ -26,7 +26,7 @@ def review_to_polairty(review):
 #Setting up a loop for basic user input
 i = 0
 while i == 0:
-    request = str(input("Please enter which number reviews you want to compare, starting with the first only, or all for a list of all reviews with polarity: "))
+    request = str(input("Please enter the id of the reviews you want to compare, starting with the first review id number only, or all for a list of all reviews with polarity: "))
     #Making the pogram iterate though every reviews and make a dictionary of reviews with their polarity, could be modified to export this to a file afterwards
     if request.lower() == "all":
         i = 1
@@ -39,7 +39,7 @@ while i == 0:
     #Having the program compare two reviews, giving the text and polarity of each
     if request.isdigit():
         input1 = int(request)
-        request = str(input("Please enter the second reviews you want to compare: "))
+        request = str(input("Please enter the second id of the review you want to compare: "))
         if request.isdigit():
             input2 = int(request)
             print(f"The first review's polarity was {review_to_polairty(review_data[input1])} and the second was {review_to_polairty(review_data[input2])}.\nThe first review verbatum was \"{review_data[input1]}\".\nThe second review verbatum was \"{review_data[input2]}\".")
